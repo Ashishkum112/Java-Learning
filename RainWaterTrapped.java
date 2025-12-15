@@ -30,11 +30,10 @@ public class RainWaterTrapped {
         return trappedWater;
     }
     public static void main(String[] args) {
+
         int rain_array[] = {4,2,0,6,3,2,5};
-
         int trappedWater = findTrappedWater(rain_array);
-
         System.out.println("The Trapped Rain water is : " +trappedWater);
-
+        
     }
 }
