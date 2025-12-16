@@ -11,26 +11,15 @@ public class DiagonalSum {
                            {7,8,9}
                         };               
         
-        int n = matrix.length ;
-        int left_pointer = matrix.length;
-        int right_pointer = 1;
-        int primary_sum = 0;
-        int secondary_sum = 0;
-        int same_index = 0;
-
-        while (left_pointer > 0 && right_pointer <= n ) {
-            
-            primary_sum = primary_sum + matrix[n-left_pointer][n- right_pointer];
-            // secondary_sum = secondary_sum + matrix[n- right_pointer][n-left_pointer];
-            if()
-            {
-                secondary_sum = secondary_sum + matrix[same_index][same_index];
-            }
-            left_pointer--;
-            right_pointer++;
-            same_index++;
+    int sum = 0;                    
+    for(int i = 0 ;i<matrix.length;i++)
+    {
+        sum+= matrix[i][i];
+        if(i == matrix.length - 1 - i)
+        {
+            //
         }
-        System.out.println("The primary diagonal Sum is : " +primary_sum);
-        System.out.println("The secondary diagonal Sum is : " +secondary_sum);
+    }
+    System.out.println("The sum of the diagonal is " +sum);
     }
 }
