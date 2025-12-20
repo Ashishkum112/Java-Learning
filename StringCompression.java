@@ -23,6 +23,9 @@ public class StringCompression {
         String str = "aaaabbbbccddd"; 
         String str1 = "aaabc";
         StringBuilder result = compressMethod(str1);
-        System.out.println(result);
+        // System.out.println(result);
+
+        String str2 = "ApnaCollege".replace("1", "");
+        System.out.println(str2);
     }
 }
