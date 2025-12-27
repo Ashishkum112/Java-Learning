@@ -32,7 +32,7 @@ public class BitManipulation {
         Scanner sc = new Scanner(System.in);
 
         //Taking the input
-        int x  = sc.nextInt();
+        // int x  = sc.nextInt();
 
         //Taking the bitmask 
         // int bitMask = 1<<x;
@@ -48,10 +48,39 @@ public class BitManipulation {
 
         //clear the ith bit
 
-        int bitmask = 1 << x;
+        int bitmask = 1 << 2;
 
         //Clear the ith bit 
-        int result  = clearIthBit(10,bitmask);
-        System.out.println(result);
+        // int result  = clearIthBit(10,bitmask);
+        // System.out.println(result);
+
+        //Clear the Last i bits
+        // bitmask = ((-1)<<2);
+        
+        // System.out.println(15 & bitmask);
+
+
+        //clear the range of the bits from i to j
+        // int j = 4;
+        // int i = 2;
+        // int a = ((~0) << (j+1));
+        // int b = (1<<i) - 1 ;
+        // bitmask = a | b;
+        // System.out.println( 10 & bitmask);
+
+
+        //Find the number of set bits in a number
+        int n = sc.nextInt();
+        int count = 0;
+        while(n > 0)
+        {
+            if((n & 1) != 0)
+            {
+                count++;
+            }
+            n = n>>1;
+        }
+        System.out.println("The number of set bits are : " +count);
+
     }
 }
