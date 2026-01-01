@@ -6,7 +6,8 @@ public class Anagram {
     {
         s1 = s1.toLowerCase();
         s2 = s2.toLowerCase();
-
+        System.out.println("Converting into char ");
+        //convert these inputs 
         char ch1 [] = s1.toCharArray();
         char ch2 [] = s2.toCharArray();
 
