@@ -25,5 +25,6 @@ public class FastExpo {
                 n = n>>1;
             }
             System.out.println(ans);
+            
         }
 }
