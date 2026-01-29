@@ -1,23 +1,23 @@
-public class MergeSort{
-    public static void mergeSortAlgo(int arr[],int sI,int eI)
+public class MergeSort {
+    public static void MergeSortAlgo(int arr[],int startIndex,int endIndex)
     {
-        if(sI >= eI)
+        if(startIndex >= endIndex)
         {
             return;
         }
-        int middleIndex = sI + ( eI - sI)/2;
-        mergeSortAlgo(arr, sI, middleIndex);
-        mergeSortAlgo(arr, middleIndex +1, eI);
-        merge(arr, sI, eI,middleIndex);
+        int middleIndex = startIndex + ( endIndex - startIndex) / 2;
+        MergeSortAlgo(arr, startIndex, middleIndex);
+        MergeSortAlgo(arr, middleIndex+1 , endIndex);
+        merge(arr,startIndex,endIndex,middleIndex);
     }
-    public static void merge(int arr[],int sI,int eI,int mI)
+    public static void merge(int arr[],int startIndex,int endIndex,int middleIndex)
     {
-        int tempArray[] = new int[eI - sI + 1];
-        int i = sI;
-        int j = mI + 1;
-        int k = 0;
-        while (i <= mI && j <= eI) 
-            {
+        int i = startIndex;
+        int j = middleIndex + 1;
+        int k = 0;  
+        int tempArray[] = new int[endIndex - startIndex + 1];  // 3-0+1
+
+        while (i <= middleIndex && j <= endIndex) {
             if(arr[i] < arr[j])
             {
                 tempArray[k] = arr[i];
@@ -30,38 +30,39 @@ public class MergeSort{
             }
             k++;
         }
-            while (i <= mI) 
-            {
-                tempArray[k] = arr[i];
-                i++;
-                k++;
-            }
-            while (j <= eI) 
-            {
-                tempArray[k] = arr[j];
-                j++;
-                k++;
-            }   
+        while( i <= middleIndex)
+        {
+            tempArray[k] = arr[i];
+            i++;
+            k++;
+        }
+         while( j <= endIndex)
+        {
+            tempArray[k] = arr[j];
+            j++;
+            k++;
+        }
 
-            for(k=0,i = sI; k<tempArray.length;k++,i++)
-            {
-                arr[i] = tempArray[k];
-            }
-            }
-
-
-
-
-    public static void main(String[] args) {
-        int arr[] = {4,5,1,8,6,3};
-        //           1,3,4,5,6,8
-        int startIndex = 0;
-        int endingIndex = arr.length - 1;
-
-        mergeSortAlgo(arr,startIndex,endingIndex);
+        i = startIndex;
+        for(int s = 0; s<tempArray.length;s++,i++)
+        {
+            arr[i] = tempArray[s];
+        }
+        printarr(arr, startIndex, endIndex);
+        
+    }
+    public static void printarr(int arr[] , int startIndex,int endIndex)
+    {
         for(int i=0;i<arr.length;i++)
         {
-            System.out.print(arr[i] + "     ");
+            System.out.print(arr[i] + ",");
         }
+        System.out.println("Recursion");
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {4,3,2,1};
+        MergeSortAlgo(arr,0,arr.length - 1);
+        printarr(arr,0,arr.length);
     }
 }
